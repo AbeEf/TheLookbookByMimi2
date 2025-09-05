@@ -10,6 +10,12 @@ import { discoverEndpoints } from "./swagger.js";
 
 let endpoints = null;
 
+const MOCK_BASE =
+  location.hostname === "localhost"
+    ? "/mock" // local dev (serve from /mock folder)
+    : `${location.origin}${location.pathname.split("/").slice(0, 2).join("/")}/mock`;
+
+
 async function init() {
   if (!endpoints) {
     endpoints = await discoverEndpoints();
@@ -24,7 +30,7 @@ function buildUrl(path) {
 export const apiClient = {
   async getProducts(params = {}) {
     if (MOCK_MODE) {
-      const res = await fetch("/mock/products.json");
+      const res = await fetch(`${MOCK_BASE}/products.json`);
       return res.json();
     }
     await init();
@@ -33,7 +39,7 @@ export const apiClient = {
 
   async getProduct(id) {
     if (MOCK_MODE) {
-      const res = await fetch("/mock/products.json");
+      const res = await fetch(`${MOCK_BASE}/products.json`);
       const arr = await res.json();
       return arr.find(p => p.id === id);
     }
@@ -43,7 +49,7 @@ export const apiClient = {
 
   async getRelatedProducts(id) {
     if (MOCK_MODE) {
-      const res = await fetch("/mock/related.json");
+      const res = await fetch(`${MOCK_BASE}/related.json`);
       const arr = await res.json();
       const item = arr.find(x => x.productId === id);
       return item ? item.related : [];
@@ -54,7 +60,7 @@ export const apiClient = {
 
   async getMoodboards(params = {}) {
     if (MOCK_MODE) {
-      const res = await fetch("/mock/moodboards.json");
+      const res = await fetch(`${MOCK_BASE}/moodboards.json`);
       return res.json();
     }
     await init();
@@ -63,7 +69,7 @@ export const apiClient = {
 
   async getMoodboard(id) {
     if (MOCK_MODE) {
-      const res = await fetch("/mock/moodboards.json");
+      const res = await fetch(`${MOCK_BASE}/moodboards.json`);
       const arr = await res.json();
       return arr.find(mb => mb.id === id);
     }
@@ -73,11 +79,11 @@ export const apiClient = {
 
   async getProductsForMoodboard(id) {
     if (MOCK_MODE) {
-      const res = await fetch("/mock/moodboard-products.json");
+      const res = await fetch(`${MOCK_BASE}/moodboard-products.json`);
       const arr = await res.json();
       const map = arr.find(x => x.moodboardId === id);
       if (!map) return [];
-      const all = await (await fetch("/mock/products.json")).json();
+      const all = await (await fetch(`${MOCK_BASE}/products.json`)).json();
       return all.filter(p => map.productIds.includes(p.id));
     }
     await init();
