@@ -60,6 +60,8 @@ export const apiClient = {
 
   async getMoodboards(params = {}) {
     if (MOCK_MODE) {
+      console.log("MOCK_MODE active");
+      console.log(`${MOCK_BASE}/moodboards.json`);
       const res = await fetch(`${MOCK_BASE}/moodboards.json`);
       return res.json();
     }
