@@ -1,0 +1,148 @@
+[
+  {
+    "id": "p001",
+    "name": "Linen Overshirt — Sand",
+    "brand": "Mimi Studio",
+    "price": 89,
+    "originalPrice": 129,
+    "tags": ["linen", "neutral", "outerwear"],
+    "badges": ["New", "Trending"],
+    "merchantUrl": "https://example.com/products/p001",
+    "description": "Breathable linen overshirt in a soft sand tone. Relaxed fit, drop shoulder.",
+    "images": [
+      { "url": "https://picsum.photos/id/1011/800/800", "alt": "Linen overshirt front view" },
+      { "url": "https://picsum.photos/id/1012/800/800", "alt": "Linen overshirt back view" },
+      { "url": "https://picsum.photos/id/1013/800/800", "alt": "Linen overshirt detail" }
+    ],
+    "views": 1342,
+    "favoritesCount": 211,
+    "clickThroughs": 96,
+    "updatedAt": "2025-08-18T15:42:00Z"
+  },
+  {
+    "id": "p002",
+    "name": "Pleated Midi Skirt — Charcoal",
+    "brand": "Casa Lato",
+    "price": 74.5,
+    "originalPrice": 0,
+    "tags": ["skirt", "pleated", "charcoal"],
+    "badges": ["Featured"],
+    "merchantUrl": "https://example.com/products/p002",
+    "description": "Floaty pleats with a satin sheen. Elastic waist.",
+    "images": [
+      { "url": "https://picsum.photos/id/1025/800/800", "alt": "Pleated midi skirt on model" }
+    ],
+    "views": 892,
+    "favoritesCount": 140,
+    "clickThroughs": 51,
+    "updatedAt": "2025-08-28T10:10:00Z"
+  },
+  {
+    "id": "p003",
+    "name": "Boxy Tee — Off-White",
+    "brand": "Everyday Co",
+    "price": 22,
+    "originalPrice": 0,
+    "tags": ["tee", "cotton", "offwhite"],
+    "badges": ["Sale"],
+    "merchantUrl": "https://example.com/products/p003",
+    "description": "Heavyweight cotton with a crisp handfeel.",
+    "images": [
+      { "url": "https://picsum.photos/id/1005/800/800", "alt": "Boxy tee flat lay" }
+    ],
+    "views": 451,
+    "favoritesCount": 67,
+    "clickThroughs": 20,
+    "updatedAt": "2025-07-30T08:05:00Z"
+  },
+  {
+    "id": "p004",
+    "name": "Tailored Trousers — Navy",
+    "brand": "Mimi Studio",
+    "price": 98,
+    "originalPrice": 0,
+    "tags": ["trousers", "tailored", "navy"],
+    "badges": ["Trending"],
+    "merchantUrl": "https://example.com/products/p004",
+    "description": "Cropped hem, sharp crease, mid-rise.",
+    "images": [
+      { "url": "https://picsum.photos/id/1019/800/800", "alt": "Tailored trousers detail" }
+    ],
+    "views": 1203,
+    "favoritesCount": 188,
+    "clickThroughs": 70,
+    "updatedAt": "2025-08-12T12:30:00Z"
+  },
+  {
+    "id": "p005",
+    "name": "Soft Knit Cardigan — Oat",
+    "brand": "Cloud Knit",
+    "price": 64,
+    "originalPrice": 74,
+    "tags": ["knit", "cardigan", "oat"],
+    "badges": ["Sale", "Featured"],
+    "merchantUrl": "https://example.com/products/p005",
+    "description": "Cozy knit with corozo buttons and rib trims.",
+    "images": [
+      { "url": "https://picsum.photos/id/1027/800/800", "alt": "Knit cardigan closeup" }
+    ],
+    "views": 615,
+    "favoritesCount": 102,
+    "clickThroughs": 34,
+    "updatedAt": "2025-08-05T09:00:00Z"
+  },
+  {
+    "id": "p006",
+    "name": "Leather Loafers — Black",
+    "brand": "Stride",
+    "price": 120,
+    "originalPrice": 0,
+    "tags": ["shoes", "leather", "black"],
+    "badges": ["New"],
+    "merchantUrl": "https://example.com/products/p006",
+    "description": "Hand-stitched apron seam, cushioned insole.",
+    "images": [
+      { "url": "https://picsum.photos/id/1035/800/800", "alt": "Leather loafers side view" }
+    ],
+    "views": 302,
+    "favoritesCount": 44,
+    "clickThroughs": 18,
+    "updatedAt": "2025-08-31T13:15:00Z"
+  },
+  {
+    "id": "p007",
+    "name": "Silk Scarf — Bloom",
+    "brand": "Casa Lato",
+    "price": 48,
+    "originalPrice": 0,
+    "tags": ["silk", "accessory", "print"],
+    "badges": [],
+    "merchantUrl": "https://example.com/products/p007",
+    "description": "Hand-rolled edges, watercolor floral motif.",
+    "images": [
+      { "url": "https://picsum.photos/id/1045/800/800", "alt": "Silk scarf folded" }
+    ],
+    "views": 189,
+    "favoritesCount": 22,
+    "clickThroughs": 9,
+    "updatedAt": "2025-08-20T16:00:00Z"
+  },
+  {
+    "id": "p008",
+    "name": "Denim Jacket — Classic Blue",
+    "brand": "Everyday Co",
+    "price": 110,
+    "originalPrice": 0,
+    "tags": ["denim", "jacket", "blue"],
+    "badges": ["Trending"],
+    "merchantUrl": "https://example.com/products/p008",
+    "description": "Vintage wash, boxy cut, copper hardware.",
+    "images": [
+      { "url": "https://picsum.photos/id/1062/800/800", "alt": "Denim jacket on hanger" }
+    ],
+    "views": 1002,
+    "favoritesCount": 160,
+    "clickThroughs": 61,
+    "updatedAt": "2025-08-26T11:40:00Z"
+  }
+]

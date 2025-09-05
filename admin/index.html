@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  />
+  <title>Admin – The Lookbook by Mimi</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&family=Libre+Baskerville:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Shared styles -->
+  <link rel="stylesheet" href="../css/shared.css" />
+  <link rel="stylesheet" href="../css/components/header.css" />
+  <link rel="stylesheet" href="../css/components/drawer.css" />
+  <link rel="stylesheet" href="../css/components/layout.css" />
+  <link rel="stylesheet" href="../css/components/forms.css" />
+  <link rel="stylesheet" href="../css/components/card.css" />
+  <link rel="stylesheet" href="../css/components/badges.css" />
+
+  <!-- Admin-specific styles -->
+  <link rel="stylesheet" href="./css/admin.css" />
+
+  <!-- Core -->
+  <script type="module" src="../js/nav.js" defer></script>
+  <script type="module" src="./js/admin-guard.js" defer></script>
+  <script type="module" src="./js/admin-ui.js" defer></script>
+</head>
+<body>
+  <div id="ariaLive" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- Header -->
+  <header class="app-header" role="banner">
+    <button
+      id="hamburger"
+      class="icon-btn"
+      aria-label="Open menu"
+      aria-controls="drawer"
+      aria-expanded="false"
+    >☰</button>
+
+    <a href="../index.html" class="brand">
+      <img src="../assets/logo-hanger-dark.png" alt="" class="brand__icon" />
+      <span class="brand__title">The Lookbook by Mimi</span>
+    </a>
+
+    <nav class="header-nav" aria-label="Admin Primary">
+      <a href="./index.html" aria-current="page">Dashboard</a>
+      <a href="#" id="navUsers">Users</a>
+      <a href="#" id="navProducts">Products</a>
+      <a href="#" id="navMoodboards">Moodboards</a>
+      <a href="./auth.html" id="navSignOut">Sign out</a>
+    </nav>
+
+    <a href="../favorites.html" class="icon-btn fav" aria-label="Favorites">
+     <svg xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 122.88 107.41"
+          style="color: var(--color-accent); width:28px; height:28px;">
+        <path fill="currentColor" d="M60.83,17.19C68.84,8.84,74.45,1.62,86.79,0.21c23.17-2.66,44.48,21.06,32.78,44.41 c-3.33,6.65-10.11,14.56-17.61,22.32c-8.23,8.52-17.34,16.87-23.72,23.2l-17.4,17.26L46.46,93.56C29.16,76.9,0.95,55.93,0.02,29.95 C-0.63,11.75,13.73,0.09,30.25,0.3C45.01,0.5,51.22,7.84,60.83,17.19z"/>
+      </svg>
+      <span class="badge" id="favBadge" hidden>0</span>
+    </a>
+  </header>
+
+  <main id="main" class="container stack-md" tabindex="-1">
+    <h1>Admin Dashboard</h1>
+
+    <!-- Tabs -->
+    <div class="admin-tabs" role="tablist" aria-label="Admin Sections">
+      <button role="tab" id="tabUsers" aria-selected="false" aria-controls="panelUsers" class="button--ghost">Users</button>
+      <button role="tab" id="tabProducts" aria-selected="true" aria-controls="panelProducts" class="button--ghost">Products</button>
+      <button role="tab" id="tabMoodboards" aria-selected="false" aria-controls="panelMoodboards" class="button--ghost">Moodboards</button>
+    </div>
+
+    <!-- Users Panel -->
+    <section id="panelUsers" role="tabpanel" aria-labelledby="tabUsers" hidden>
+      <header class="admin-toolbar">
+        <h2>Users</h2>
+        <div class="admin-actions">
+          <button id="createUserBtn" class="button">Create User</button>
+        </div>
+      </header>
+      <div class="admin-table-wrap">
+        <table class="admin-table" aria-label="Users">
+          <thead>
+            <tr>
+              <th scope="col">Email</th>
+              <th scope="col">Name</th>
+              <th scope="col">Role</th>
+              <th scope="col">Status</th>
+              <th scope="col" class="col-actions">Actions</th>
+            </tr>
+          </thead>
+          <tbody id="usersTbody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Products Panel -->
+    <section id="panelProducts" role="tabpanel" aria-labelledby="tabProducts">
+      <header class="admin-toolbar">
+        <h2>Products</h2>
+        <div class="admin-actions">
+          <input id="searchProductsAdmin" type="search" placeholder="Search products…" aria-label="Search products" />
+          <button id="createProductBtn" class="button">Create Product</button>
+        </div>
+      </header>
+
+      <div class="admin-table-wrap">
+        <table class="admin-table" aria-label="Products">
+          <thead></thead>
+          <tbody id="productsTbody"></tbody>
+        </table>
+      </div>
+
+      <!-- Product Dialog -->
+      <dialog id="productDialog" aria-labelledby="productDialogTitle">
+        <form method="dialog" id="productForm" class="stack-sm">
+          <h3 id="productDialogTitle">Product</h3>
+          <label><input type="text" name="name" placeholder="Name" required /></label>
+          <label><input type="text" name="brand" placeholder="Brand" /></label>
+          <label><input type="number" name="price" placeholder="Price" step="0.01" /></label>
+          <label><input type="number" name="originalPrice" placeholder="Original Price" step="0.01" /></label>
+          <label><input type="text" name="tags" placeholder="Tags (comma separated)" /></label>
+          <label><input type="url" name="merchantUrl" placeholder="Merchant URL" /></label>
+          <label><textarea name="description" rows="4" placeholder="Description"></textarea></label>
+          <fieldset>
+            <legend>Images</legend>
+            <div id="imageInputs" class="stack-xs">
+              <input type="url" name="image0" placeholder="Image URL" />
+              <input type="text" name="image0alt" placeholder="Alt text" />
+            </div>
+            <button id="addImageInput" type="button" class="button--ghost">+ Add image</button>
+          </fieldset>
+          <menu class="dialog-actions">
+            <button value="cancel" class="button--ghost">Cancel</button>
+            <button id="saveProductBtn" value="default" class="button">Save</button>
+          </menu>
+        </form>
+      </dialog>
+    </section>
+
+    <!-- Moodboards Panel -->
+    <section id="panelMoodboards" role="tabpanel" aria-labelledby="tabMoodboards" hidden>
+      <header class="admin-toolbar">
+        <h2>Moodboards</h2>
+        <div class="admin-actions">
+          <input id="searchMoodboardsAdmin" type="search" placeholder="Search moodboards…" aria-label="Search moodboards" />
+          <button id="createMoodboardBtn" class="button">Create Moodboard</button>
+        </div>
+      </header>
+      <div class="admin-table-wrap">
+        <table class="admin-table" aria-label="Moodboards">
+          <thead></thead>
+          <tbody id="moodboardsTbody"></tbody>
+        </table>
+      </div>
+
+      <!-- Moodboard Dialog -->
+      <dialog id="moodboardDialog" aria-labelledby="moodboardDialogTitle">
+        <form method="dialog" id="moodboardForm" class="stack-sm">
+          <h3 id="moodboardDialogTitle">Moodboard</h3>
+          <label><input type="text" name="title" placeholder="Title" required /></label>
+          <label><textarea name="description" rows="4" placeholder="Description"></textarea></label>
+          <label><input type="text" name="tags" placeholder="Tags (comma separated)" /></label>
+          <label><input type="url" name="coverUrl" placeholder="Cover Image URL" /></label>
+          <label><input type="text" name="coverAlt" placeholder="Cover Alt Text" /></label>
+          <label><input type="checkbox" name="featured" /> Featured</label>
+          <menu class="dialog-actions">
+            <button value="cancel" class="button--ghost">Cancel</button>
+            <button id="saveMoodboardBtn" value="default" class="button">Save</button>
+          </menu>
+        </form>
+      </dialog>
+    </section>
+  </main>
+
+  <footer class="app-footer">© 2025 The Lookbook by Mimi — Admin</footer>
+
+  <!-- Drawer (mobile nav) -->
+  <div class="drawer-backdrop" id="drawerBackdrop" hidden></div>
+  <aside id="drawer" class="drawer" role="dialog" aria-modal="true" hidden>
+    <h2 id="drawerTitle" class="sr-only">Admin Menu</h2>
+    <a href="./index.html" aria-current="page">Dashboard</a>
+    <a href="#" id="drawerUsers">Users</a>
+    <a href="#" id="drawerProducts">Products</a>
+    <a href="#" id="drawerMoodboards">Moodboards</a>
+    <a href="./auth.html" id="drawerSignOut">Sign out</a>
+  </aside>
+
+  <!-- Page controllers -->
+  <script type="module" src="./js/admin-users.js" defer></script>
+  <script type="module" src="./js/admin-products.js" defer></script>
+  <script type="module" src="./js/admin-moodboards.js" defer></script>
+</body>
+</html>

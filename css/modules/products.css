@@ -1,0 +1,37 @@
+/* ========================================
+   Products List
+   ======================================== */
+
+/* Grid/list toggle toolbar */
+.products-toolbar {
+  display: flex;
+  gap: .5rem;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: .75rem;
+}
+
+.view-toggle { display: inline-flex; gap: .25rem; }
+.view-toggle .icon-btn[aria-pressed="true"] {
+  background: rgba(0,0,0,.06);
+}
+
+/* Default card ratio in the grid */
+#productsList .card__media { aspect-ratio: 1/1; }
+
+/* List view (when toggled via JS adds .is-list on #productsList) */
+#productsList.is-list {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+#productsList.is-list .card {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  grid-template-rows: auto;
+  align-items: stretch;
+}
+#productsList.is-list .card__media { aspect-ratio: auto; }
+#productsList.is-list .card__media > img {
+  height: 100%;
+  object-fit: cover;
+}

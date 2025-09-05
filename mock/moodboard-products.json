@@ -1,0 +1,14 @@
+[
+  {
+    "moodboardId": "mb001",
+    "productIds": ["p001", "p005", "p006", "p007"]
+  },
+  {
+    "moodboardId": "mb002",
+    "productIds": ["p004", "p002", "p006"]
+  },
+  {
+    "moodboardId": "mb003",
+    "productIds": ["p003", "p008", "p007"]
+  }
+]

@@ -1,0 +1,48 @@
+/* ========================================
+   Home Page
+   ======================================== */
+
+#featuredMoodboards .card__media { aspect-ratio: 16/10; }
+#featuredProducts .card__media { aspect-ratio: 1/1; }
+
+/* Optional subtle separation */
+section > h2 {
+  font-family: 'Playfair Display', serif;
+  margin: 0 0 .5rem;
+  font-size: 22px !important;
+  margin-left: 4px;
+}
+
+
+.home-hero {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  background: #fbf7f1; /* soft cream */
+  padding: 1rem 2rem 0.5rem;
+}
+
+.home-hero h1 {
+  font-family: "Playfair Display", serif;
+  font-weight: 600;
+  font-size: clamp(28px, 6vw, 56px);
+  color: #2a2927; /* near-black */
+  margin: 0 0 1.5rem;
+  line-height: 1.1;
+}
+
+.home-hero .cta {
+  display: inline-block;
+  padding: 0.8rem 1.4rem;
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
+  background: var(--color-accent); /* taupe */
+  color: #fff;
+  text-decoration: none;
+  border-radius: 999px;
+  transition: background 0.2s ease;
+}
+
+.home-hero .cta:hover {
+  background: var(--color-primary); /* darker taupe */
+}

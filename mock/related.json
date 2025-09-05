@@ -1,0 +1,11 @@
+
+[
+  { "productId": "p001", "related": ["p004", "p005", "p002"] },
+  { "productId": "p002", "related": ["p001", "p003"] },
+  { "productId": "p003", "related": ["p002", "p008"] },
+  { "productId": "p004", "related": ["p001", "p008"] },
+  { "productId": "p005", "related": ["p001"] },
+  { "productId": "p006", "related": ["p001", "p004"] },
+  { "productId": "p007", "related": ["p003"] },
+  { "productId": "p008", "related": ["p004", "p002"] }
+]

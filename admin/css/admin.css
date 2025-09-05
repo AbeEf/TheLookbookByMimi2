@@ -1,0 +1,132 @@
+/* ========================================
+   Admin Styles
+   ======================================== */
+
+/* Auth card */
+.admin-auth-card {
+  max-width: 400px;
+  margin: 3rem auto;
+  background: var(--color-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
+}
+
+.admin-auth-title {
+  font-family: 'Playfair Display', serif;
+  margin: 0 0 1rem;
+  text-align: center;
+}
+
+.admin-auth-tabs {
+  display: flex;
+  justify-content: center;
+  gap: .5rem;
+  margin-bottom: 1rem;
+}
+.admin-auth-tabs button[aria-selected="true"] {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+.admin-auth-panel {
+  display: block;
+}
+.admin-auth-panel[hidden] {
+  display: none !important;
+}
+
+.admin-auth-help {
+  text-align: center;
+  font-size: .9rem;
+  margin-top: .5rem;
+}
+
+/* Dashboard layout */
+.admin-tabs {
+  display: flex;
+  gap: .5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.admin-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 0 .5rem;
+  flex-wrap: wrap;
+  gap: .5rem;
+}
+.admin-actions {
+  display: flex;
+  gap: .5rem;
+  flex-wrap: wrap;
+}
+
+/* Tables */
+.admin-table-wrap {
+  overflow-x: auto;
+}
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .9rem;
+}
+.admin-table th,
+.admin-table td {
+  border: 1px solid var(--border);
+  padding: .5rem .75rem;
+  text-align: left;
+}
+.admin-table th {
+  background: #f9fafb;
+  font-weight: 600;
+}
+.admin-table .col-actions {
+  width: 120px;
+}
+.admin-table img.thumb {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+/* Dialogs */
+dialog {
+  border: none;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1rem;
+  max-width: 500px;
+  width: 90%;
+}
+dialog::backdrop {
+  background: rgba(0,0,0,.35);
+}
+.dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: .5rem;
+  margin-top: 1rem;
+}
+
+/* Bulk bar */
+.bulk-bar {
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--color-surface);
+  border-top: 2px solid var(--color-accent);
+  padding: .5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 50;
+}
+.bulk-bar.hidden {
+  display: none;
+}

@@ -1,0 +1,15 @@
+/* ========================================
+   Moodboard Detail
+   ======================================== */
+
+.moodboard-hero {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  background: var(--color-surface);
+}
+.moodboard-hero__media { aspect-ratio: 16/9; }
+.moodboard-hero__body { padding: .75rem .9rem; }
+
+#moodboardProducts .card__media { aspect-ratio: 1/1; }

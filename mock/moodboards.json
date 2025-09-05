@@ -1,0 +1,26 @@
+[
+  {
+    "id": "mb001",
+    "title": "Coastal Neutrals",
+    "description": "Sand, oat, and off-white textures for breezy days.",
+    "tags": ["neutral", "linen", "coastal"],
+    "featured": true,
+    "coverImage": { "url": "https://res.cloudinary.com/dcqlvobvk/image/upload/v1757042797/IMG-20250902-WA0008_yfttmq.jpg", "alt": "Neutral outfits by the sea" }
+  },
+  {
+    "id": "mb002",
+    "title": "City Night",
+    "description": "Sleek navy and charcoal with metallic accents.",
+    "tags": ["navy", "charcoal", "evening"],
+    "featured": false,
+    "coverImage": { "url": "https://res.cloudinary.com/dcqlvobvk/image/upload/v1757042798/IMG-20250901-WA0002_rry9tw.jpg", "alt": "Nighttime city wear" }
+  },
+  {
+    "id": "mb003",
+    "title": "Weekend Market",
+    "description": "Relaxed denim, boxy tees, and comfy shoes.",
+    "tags": ["denim", "casual"],
+    "featured": false,
+    "coverImage": { "url": "https://picsum.photos/id/1020/1200/675", "alt": "Casual outfits at a market" }
+  }
+]

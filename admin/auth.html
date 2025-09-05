@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  />
+  <title>Admin Auth – The Lookbook by Mimi</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&family=Libre+Baskerville:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Shared styles -->
+  <link rel="stylesheet" href="../css/shared.css" />
+  <link rel="stylesheet" href="../css/components/forms.css" />
+  <link rel="stylesheet" href="../css/components/layout.css" />
+
+  <!-- Admin styles -->
+  <link rel="stylesheet" href="./css/admin.css" />
+
+  <!-- Admin Auth Controller -->
+  <script type="module" src="./js/admin-auth.js" defer></script>
+</head>
+<body>
+  <main id="main" class="container" tabindex="-1">
+    <section class="admin-auth-card" aria-labelledby="authTitle">
+      <h1 id="authTitle" class="admin-auth-title">Admin</h1>
+
+      <!-- Tabs -->
+      <div class="admin-auth-tabs" role="tablist" aria-label="Authentication">
+        <button id="tabLogin" role="tab" aria-selected="true" aria-controls="panelLogin" class="button--ghost">Login</button>
+        <button id="tabForgot" role="tab" aria-selected="false" aria-controls="panelForgot" class="button--ghost">Forgot</button>
+        <button id="tabReset" role="tab" aria-selected="false" aria-controls="panelReset" class="button--ghost">Reset</button>
+      </div>
+
+      <!-- Login -->
+      <section id="panelLogin" role="tabpanel" aria-labelledby="tabLogin" class="admin-auth-panel">
+        <form id="loginForm" class="stack-sm" novalidate>
+          <label>
+            <span class="sr-only">Email</span>
+            <input id="loginEmail" type="email" name="email" placeholder="Email" autocomplete="username" required />
+          </label>
+          <label>
+            <span class="sr-only">Password</span>
+            <input id="loginPassword" type="password" name="password" placeholder="Password" autocomplete="current-password" required />
+          </label>
+          <button type="submit" class="button">Sign in</button>
+          <p class="admin-auth-help">
+            <a href="#" id="toForgot">Forgot your password?</a>
+          </p>
+        </form>
+      </section>
+
+      <!-- Forgot -->
+      <section id="panelForgot" role="tabpanel" aria-labelledby="tabForgot" class="admin-auth-panel" hidden>
+        <form id="forgotForm" class="stack-sm" novalidate>
+          <label>
+            <span class="sr-only">Email</span>
+            <input id="forgotEmail" type="email" name="email" placeholder="Email" autocomplete="email" required />
+          </label>
+          <button type="submit" class="button">Send reset link</button>
+          <p class="admin-auth-help">
+            <a href="#" id="toLogin1">Back to login</a>
+          </p>
+        </form>
+      </section>
+
+      <!-- Reset -->
+      <section id="panelReset" role="tabpanel" aria-labelledby="tabReset" class="admin-auth-panel" hidden>
+        <form id="resetForm" class="stack-sm" novalidate>
+          <label>
+            <span class="sr-only">Email</span>
+            <input id="resetEmail" type="email" name="email" placeholder="Email" autocomplete="email" required />
+          </label>
+          <label>
+            <span class="sr-only">New password</span>
+            <input id="resetPassword" type="password" name="password" placeholder="New password" autocomplete="new-password" required />
+          </label>
+          <label>
+            <span class="sr-only">Confirm new password</span>
+            <input id="resetConfirm" type="password" name="confirm" placeholder="Confirm new password" autocomplete="new-password" required />
+          </label>
+          <button type="submit" class="button">Reset password</button>
+          <p class="admin-auth-help">
+            <a href="#" id="toLogin2">Back to login</a>
+          </p>
+        </form>
+      </section>
+    </section>
+  </main>
+</body>
+</html>

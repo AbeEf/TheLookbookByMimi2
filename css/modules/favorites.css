@@ -1,0 +1,11 @@
+/* ========================================
+   Favorites
+   ======================================== */
+
+#favoritesList .card__media { aspect-ratio: 1/1; }
+
+.empty-state {
+  text-align: center;
+  color: var(--color-muted);
+  padding: 2rem 1rem;
+}

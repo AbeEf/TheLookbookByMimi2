@@ -1,0 +1,55 @@
+
+.drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.35);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .25s ease;
+  z-index: 110;
+}
+
+.drawer {
+  position: fixed;
+  inset: 0 auto 0 0;      /* left-side sheet */
+  width: 90%;
+  max-width: 420px;       /* guard on very wide phones */
+  background: var(--color-surface);
+  transform: translateX(-100%);
+  will-change: transform;
+  transition: transform .25s ease;
+  padding: 1rem;
+  display: grid;
+  align-content: start;
+  gap: .25rem;
+  z-index: 120;
+  border-right: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+/* Open states (JS adds .open and unsets [hidden]) */
+.drawer.open { transform: translateX(0); }
+.drawer-backdrop.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Links */
+.drawer a {
+  padding: .75rem 1rem;
+  border-radius: 12px;
+  color: var(--color-text);
+}
+.drawer a:hover { background: rgba(0,0,0,.04); }
+.drawer a[aria-current="page"] {
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+/* Force-hide on desktop, rely on top nav there */
+@media (min-width: 900px) {
+  .drawer,
+  .drawer-backdrop {
+    display: none !important;
+  }
+}

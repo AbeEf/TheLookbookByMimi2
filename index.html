@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  />
+  <title>The Lookbook by Mimi – Home</title>
+
+  <!-- Performance: fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&family=Libre+Baskerville:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Shared + Components -->
+  <link rel="stylesheet" href="css/shared.css" />
+  <link rel="stylesheet" href="css/components/header.css" />
+  <link rel="stylesheet" href="css/components/drawer.css" />
+  <link rel="stylesheet" href="css/components/card.css" />
+  <link rel="stylesheet" href="css/components/badges.css" />
+  <link rel="stylesheet" href="css/components/layout.css" />
+  <link rel="stylesheet" href="css/components/forms.css" />
+
+  <!-- Page module -->
+  <link rel="stylesheet" href="css/modules/home.css" />
+
+  <!-- Scripts -->
+  <script type="module" src="js/nav.js" defer></script>
+  <script type="module" src="js/home.js" defer></script>
+</head>
+<body>
+  <noscript>
+    This site requires JavaScript for dynamic content. Please enable JavaScript.
+  </noscript>
+
+  <!-- Live region for accessibility updates (e.g., items appended during local infinite scroll) -->
+  <div id="ariaLive" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- Shared Header (contract-compliant) -->
+  <header class="app-header" role="banner">
+    <button
+      id="hamburger"
+      class="icon-btn"
+      aria-label="Open menu"
+      aria-controls="drawer"
+      aria-expanded="false"
+    >
+      ☰
+    </button>
+
+    <a href="index.html" class="brand">
+      <img src="assets/logo-hanger-dark.png" alt="" class="brand__icon" />
+      <span class="brand__title">The Lookbook by Mimi</span>
+    </a>
+
+    <!-- Desktop primary nav (centered on large screens) -->
+    <nav class="header-nav" aria-label="Primary">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="moodboards.html">Moodboards</a>
+      <a href="products.html">Products</a>
+      <a href="favorites.html">Favorites</a>
+      <a href="builder.html">Builder</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <!-- Favorites icon with badge -->
+    <a href="favorites.html" class="icon-btn fav" aria-label="Favorites">
+      <!-- Inline heart for fewer requests -->
+     <svg xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 122.88 107.41"
+          style="color: var(--color-accent); width:28px; height:28px;">
+        <path fill="currentColor" d="M60.83,17.19C68.84,8.84,74.45,1.62,86.79,0.21c23.17-2.66,44.48,21.06,32.78,44.41 c-3.33,6.65-10.11,14.56-17.61,22.32c-8.23,8.52-17.34,16.87-23.72,23.2l-17.4,17.26L46.46,93.56C29.16,76.9,0.95,55.93,0.02,29.95 C-0.63,11.75,13.73,0.09,30.25,0.3C45.01,0.5,51.22,7.84,60.83,17.19z"/>
+      </svg>
+      <span class="badge" id="favBadge" hidden>0</span>
+    </a>
+  </header>
+
+  <main id="main" class="container" tabindex="-1">
+    <!-- Hero -->
+    <div class="home-hero" aria-label="Intro">
+          <h1 class="brand">The Lookbook<br/>by Mimi</h1>
+          <a class="cta" href="moodboards.html">Browse Moodboards</a>
+    </div>
+
+    <!-- Featured Moodboards -->
+    <section class="stack-md" aria-labelledby="mbHeading">
+      <h2 id="mbHeading">Featured Moodboards</h2>
+
+      <!-- Skeletons for initial paint -->
+      <div id="featuredMoodboards" class="card-grid" data-skeletons>
+        <article class="card skeleton" style="aspect-ratio:16/10"></article>
+        <article class="card skeleton" style="aspect-ratio:16/10"></article>
+        <article class="card skeleton" style="aspect-ratio:16/10"></article>
+        <article class="card skeleton" style="aspect-ratio:16/10"></article>
+      </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="stack-md" aria-labelledby="prodHeading">
+      <h2 id="prodHeading">Featured Products</h2>
+
+      <!-- Skeletons for initial paint -->
+      <div id="featuredProducts" class="card-grid" data-skeletons>
+        <article class="card skeleton" style="aspect-ratio:1/1"></article>
+        <article class="card skeleton" style="aspect-ratio:1/1"></article>
+        <article class="card skeleton" style="aspect-ratio:1/1"></article>
+        <article class="card skeleton" style="aspect-ratio:1/1"></article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="app-footer">© 2025 The Lookbook by Mimi</footer>
+
+  <!-- Mobile Drawer (overlay) -->
+  <div class="drawer-backdrop" id="drawerBackdrop" hidden></div>
+  <aside
+    id="drawer"
+    class="drawer"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="drawerTitle"
+    hidden
+  >
+    <h2 id="drawerTitle" class="sr-only">Main Menu</h2>
+    <a href="index.html" aria-current="page">Home</a>
+    <a href="moodboards.html">Moodboards</a>
+    <a href="products.html">Products</a>
+    <a href="favorites.html">Favorites</a>
+    <a href="builder.html">Builder</a>
+    <a href="contact.html">Contact</a>
+  </aside>
+</body>
+</html>

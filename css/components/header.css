@@ -1,0 +1,122 @@
+/* ========================================
+   Header
+   Sticky, shadow after scroll
+   Desktop nav center, favorites badge right
+   ======================================== */
+
+.app-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: .75rem;
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--border);
+  padding: .5rem 1rem;
+}
+.app-header.scrolled { box-shadow: var(--shadow); }
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+}
+.brand__icon { width: 28px; height: 28px; }
+.brand__title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05rem;
+  letter-spacing: .2px;
+}
+
+.icon-btn {
+  background: transparent;
+  border: 0;
+  padding: .35rem .5rem;
+  border-radius: 10px;
+}
+.icon-btn:hover { background: rgba(0,0,0,.04); }
+.icon-btn:active { transform: translateY(1px); }
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 .3rem;
+  font-size: .7rem;
+  line-height: 1;
+  color: #fff;
+  background: var(--color-accent);
+  border-radius: 999px;
+  margin-left: .25rem;
+}
+
+
+.icon-btn.fav {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+}
+
+.icon-btn.fav svg {
+  color: var(--color-primary) !important; /* your dynamic variable */
+  width: 28px;
+  height: 28px;
+}
+
+/* Center the badge inside the heart */
+.icon-btn.fav .badge {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;                 /* override pill spacing */
+  min-width: auto;           /* no forced pill width */
+  height: auto;
+  padding: 0;
+  background: transparent;   /* show the number directly on the heart */
+  color: #fff;               /* contrast on the heart fill */
+  font-size: .72rem;         /* tweak to taste */
+  font-weight: 700;
+  line-height: 1;
+  pointer-events: none;      /* clicks go to the heart */
+  z-index: 1;                /* above the SVG */
+  /* background: rgba(0,0,0,.55);
+border-radius: 999px;
+padding: .05rem .28rem; */
+
+}
+
+
+.header-nav {
+  display: none;
+  justify-content: center;
+  gap: .75rem;
+}
+.header-nav a {
+  padding: .35rem .6rem;
+  border-radius: 10px;
+  color: var(--color-muted);
+}
+.header-nav a[aria-current="page"] {
+  color: var(--color-accent);
+  font-weight: 700;
+}
+.header-nav a:hover { background: rgba(0,0,0,.04); }
+
+@media (min-width: 900px){
+  #hamburger { display: none; }
+  .header-nav { display: flex; }
+}
+
+.app-footer {
+  text-align: center;
+  padding: 1rem;
+  color: var(--color-muted);
+  border-top: 1px solid var(--border);
+  background: var(--color-surface);
+  margin-top: 2rem;
+}

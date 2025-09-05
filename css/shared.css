@@ -1,0 +1,108 @@
+/* ========================================
+   Shared CSS
+   - Brand tokens
+   - Resets & base
+   - Utility classes
+   ======================================== */
+
+/* Brand tokens */
+:root {
+  --color-primary: #4a3b31;
+  --color-background: #F9F7F4;
+  --color-surface: #FFFFFF;
+  --color-text: #1F2937;
+  --color-muted: #6B7280;
+  --color-accent: #a98a77;
+    /* --color-background: #f8f2eb;
+  --color-text: #4a3b31;
+  --color-accent: #a98274;
+  --color-soft: #faf9f6;
+  --color-white: #ffffff; */
+
+  
+
+  --radius: 16px;
+  --shadow: 0 6px 18px rgba(31,41,55,0.08);
+
+  /* Extended tokens */
+  --accent-hover: #24488a;
+  --border: #E5E7EB;
+  --focus: #93C5FD;
+}
+
+/* Resets & base */
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: 'Lato', system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji';
+  color: var(--color-text);
+  background: var(--color-background);
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body.drawer-open {
+  overflow: hidden;
+  touch-action: none;
+}
+
+
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; cursor: pointer; background: none; border: none; }
+
+:focus { outline: none; }
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+/* ========================================
+   Utilities
+   ======================================== */
+
+.hidden { display: none !important; }
+
+.sr-only {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.container {
+  width: min(1200px, 100%);
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+/* Vertical stack spacing */
+.stack-xs > * + * { margin-top: .25rem; }
+.stack-sm > * + * { margin-top: .5rem; display: flex; gap: 8px; }
+.stack-md > * + * { margin-top: 1rem; }
+.stack-lg > * + * { margin-top: 1.5rem; }
+
+/* Simple grid */
+.grid { display: grid; gap: 1rem; }
+
+/* Skeleton shimmer */
+.skeleton {
+  background: linear-gradient(90deg, #eee, #f7f7f7, #eee);
+  background-size: 200% 100%;
+  animation: shine 1.2s linear infinite;
+  border-radius: 8px;
+}
+@keyframes shine {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+
+
